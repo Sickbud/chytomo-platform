@@ -1,2 +1,2 @@
 def notify_next(queue):
-    return notify(queue[-1])
+    return notify(queue[0])
