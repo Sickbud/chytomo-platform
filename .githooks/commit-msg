@@ -1,0 +1,6 @@
+#!/bin/sh
+msg=$(head -n1 "$1")
+case "$msg" in Merge*|Revert*) exit 0;; esac
+echo "$msg" | grep -Eq "^(feat|fix|test|docs|chore|refactor|ci)\([a-z-]+\): .+" || { echo "X формат: тип(область): опис [CHY-123]"; exit 1; }
+case "$msg" in chore\(release\)*) exit 0;; esac
+echo "$msg" | grep -Eq "\[CHY-[0-9]+\]" || { echo "X немає номера задачі [CHY-nnn]"; exit 1; }

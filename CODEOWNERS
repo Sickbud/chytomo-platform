@@ -1,0 +1,5 @@
+/services/booking/ @team-lending
+/services/sync/ @team-offline
+/web/src/offline/ @team-offline
+/services/catalog/ @team-catalog
+/flags/ @release-managers
